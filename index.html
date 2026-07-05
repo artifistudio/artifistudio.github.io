@@ -1,35 +1,398 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ArtiFi Studio</title><meta name="description" content="ArtiFi Studio creates thoughtful, beautiful, and reliable mobile apps.">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArtiFi Studio — apps for the things worth keeping</title>
+<meta name="description" content="ArtiFi Studio designs small, private apps. Readiary and Burn After Writing. No servers, no tracking — your words stay on your device.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Space+Grotesk:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#050510;--text:#fff;--muted:rgba(255,255,255,.72);--border:rgba(255,255,255,.16);--pink:#ff5bd8;--yellow:#fff15c;--green:#adff72;--red:#ff6470;--shadow:0 26px 90px rgba(0,0,0,.48)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#050510;color:#fff;line-height:1.65}a{color:inherit}
-header{position:fixed;top:0;left:0;right:0;z-index:20;backdrop-filter:blur(18px);background:rgba(3,4,14,.62);border-bottom:1px solid rgba(255,255,255,.08)}
-.nav{max-width:1180px;margin:0 auto;padding:18px 22px;display:flex;justify-content:space-between;align-items:center}
-.brand{font-weight:850;font-size:22px;text-decoration:none;letter-spacing:-.4px}.brand span{background:linear-gradient(90deg,var(--pink),var(--yellow));-webkit-background-clip:text;background-clip:text;color:transparent}
-nav a{color:rgba(255,255,255,.76);text-decoration:none;margin-left:24px;font-weight:650;font-size:15px}nav a:hover{color:#fff}
-.hero{min-height:100vh;position:relative;display:grid;place-items:center;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;background:url("artifi-theme.png") center/cover no-repeat;transform:scale(1.02)}.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,rgba(0,0,0,.05),rgba(0,0,0,.55) 58%,rgba(0,0,0,.9)),linear-gradient(180deg,rgba(5,5,16,.1),#050510 96%)}
-.hero-inner{position:relative;z-index:2;max-width:980px;padding:150px 22px 90px;text-align:center}.eyebrow{display:inline-flex;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:rgba(255,255,255,.84);font-size:14px;font-weight:760;margin-bottom:24px}
-h1{margin:0;font-size:clamp(48px,8vw,96px);line-height:.95;letter-spacing:-3.2px}.gradient{background:linear-gradient(90deg,var(--pink),#ffbd65,var(--yellow));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{max-width:760px;margin:26px auto 0;color:rgba(255,255,255,.82);font-size:clamp(19px,2vw,24px)}.actions{margin-top:34px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-.button{display:inline-flex;min-height:52px;padding:14px 24px;align-items:center;justify-content:center;border-radius:999px;text-decoration:none;font-weight:850}.primary{background:linear-gradient(90deg,#a84cff,var(--pink),#ffd84d);box-shadow:0 20px 46px rgba(255,91,216,.24)}.secondary{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.065)}
-main{background:radial-gradient(circle at 10% 4%,rgba(139,92,255,.18),transparent 28%),radial-gradient(circle at 86% 12%,rgba(255,91,216,.11),transparent 26%),#050510}.container{max-width:1180px;margin:0 auto;padding:104px 22px}.section-head{max-width:760px;margin:0 auto 44px;text-align:center}
-h2{margin:0 0 14px;font-size:clamp(34px,5vw,58px);line-height:1.05;letter-spacing:-1.9px}h3{margin:0 0 10px;font-size:28px;line-height:1.18;letter-spacing:-.8px}p{margin:0;color:var(--muted);font-size:18px}
-.apps-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.app-card{position:relative;border:1px solid var(--border);border-radius:38px;background:linear-gradient(180deg,rgba(255,255,255,.13),rgba(255,255,255,.055));box-shadow:var(--shadow);overflow:hidden}
-.app-content{position:relative;z-index:1;padding:30px;display:grid;grid-template-columns:170px 1fr;gap:26px;align-items:center}.app-icon{width:170px;height:170px;object-fit:cover;border-radius:34px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
-.kicker{font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;margin-bottom:9px}.green{color:#adff72}.red{color:#ff6470}.status{display:inline-flex;margin-top:20px;padding:7px 12px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);border-radius:999px;color:rgba(255,255,255,.82);font-size:13px;font-weight:850}
-.values{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.value-card,.legal-page,.about-panel{border:1px solid var(--border);background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.045));border-radius:34px;padding:34px;box-shadow:var(--shadow)}
-.legal-hero{min-height:330px;position:relative;display:grid;place-items:end center;overflow:hidden}.legal-hero:before{content:"";position:absolute;inset:0;background:url("artifi-theme.png") center/cover no-repeat;opacity:.52}.legal-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,16,.45),#050510)}.legal-title{position:relative;z-index:1;max-width:900px;width:100%;padding:140px 22px 60px}
-.legal-page{max-width:900px;margin:0 auto}.legal-page h1{margin:0;font-size:clamp(42px,6vw,68px);line-height:1;letter-spacing:-2px}.legal-page h2{margin-top:38px;font-size:28px}.legal-page p{margin-top:10px}
-footer{background:#03040d;border-top:1px solid rgba(255,255,255,.10)}.footer-inner{max-width:1180px;margin:0 auto;padding:38px 22px 50px;display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap;color:rgba(255,255,255,.62)}footer a{color:rgba(255,255,255,.68);text-decoration:none;margin-left:18px}
-@media(max-width:940px){.apps-grid,.values{grid-template-columns:1fr}.app-content{grid-template-columns:140px 1fr}.app-icon{width:140px;height:140px;border-radius:30px}}
-@media(max-width:720px){.nav{align-items:flex-start;flex-direction:column;gap:12px}nav a{margin-left:0;margin-right:15px}.hero-inner{padding-top:145px}.app-content{grid-template-columns:1fr}.app-icon{width:150px;height:150px}.about-panel,.legal-page{padding:30px}}
-</style>
-</head><body>
-<header><div class="nav"><a class="brand" href="index.html"><span>ArtiFi Studio</span></a><nav><a href="index.html">Home</a><a href="index.html#apps">Apps</a><a href="index.html#about">About</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a></nav></div></header>
+  :root{
+    --ink:#0a0612;
+    --ink-2:#120a1f;
+    --violet:#6c4cff;
+    --pink:#ff5db8;
+    --pink-soft:#ffa6d5;
+    --amber:#ffd25e;
+    --cream:#f6efe4;
+    --muted:#a99fc0;
+    --leaf:#7a9c6e;
+    --ember:#c0362f;
+    --font-display:'Fraunces',serif;
+    --font-body:'Space Grotesk',sans-serif;
+    --font-script:'Cormorant Garamond',serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--cream);
+    font-family:var(--font-body);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
 
-<section class="hero"><div class="hero-inner"><div class="eyebrow">Independent mobile app studio</div><h1>Small apps, <span class="gradient">thoughtfully made.</span></h1><p class="lead">ArtiFi Studio creates thoughtful, beautiful, and reliable mobile apps for everyday reflection, creativity, and personal organization.</p><div class="actions"><a class="button primary" href="#apps">View Upcoming Apps →</a><a class="button secondary" href="support.html">Contact</a></div></div></section>
-<main><section id="apps" class="container"><div class="section-head"><h2>Upcoming Apps</h2><p>ArtiFi Studio is preparing a growing collection of focused mobile apps, each designed with care and a clear purpose.</p></div><div class="apps-grid">
-<article class="app-card"><div class="app-content"><img class="app-icon" src="readiary-logo.png" alt="Readiary app icon"><div><div class="kicker green">Reading Journal</div><h3>Readiary: Reading Journal</h3><p>Your reading journal, beautifully organized. Save books, write notes, and build your personal reading history.</p><span class="status">Launching soon</span></div></div></article>
-<article class="app-card"><div class="app-content"><img class="app-icon" src="burn-after-writing-icon.png" alt="Burn After Writing app icon"><div><div class="kicker red">Private Writing</div><h3>Burn After Writing</h3><p>Write freely. Let it out. Let it go. A private space for personal thoughts and expressive writing.</p><span class="status">Launching soon</span></div></div></article>
-</div></section><section id="about" class="container"><div class="about-panel"><h2>About ArtiFi Studio</h2><p>ArtiFi Studio is an independent app studio focused on creating simple, polished, and privacy-friendly apps. We care about calm design, useful features, and products that feel personal from the first launch.</p><div class="values"><div class="value-card"><h3>Thoughtful</h3><p>Focused apps with clear purpose.</p></div><div class="value-card"><h3>Beautiful</h3><p>Visual design that feels memorable.</p></div><div class="value-card"><h3>Reliable</h3><p>Simple tools made for everyday use.</p></div></div></div></section></main>
-<footer><div class="footer-inner"><div>© 2026 ArtiFi Studio. All rights reserved.</div><div><a href="privacy.html">Privacy Policy</a><a href="support.html">Support</a></div></div></footer>
-</body></html>
+  /* ---------- top nav ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px clamp(20px,5vw,60px);
+    backdrop-filter:blur(14px);
+    background:linear-gradient(180deg,rgba(10,6,18,.82),rgba(10,6,18,0));
+    transition:background .3s;
+  }
+  nav .brand{
+    font-family:var(--font-display);
+    font-weight:600;font-size:19px;letter-spacing:.5px;
+    display:flex;align-items:center;gap:9px;
+  }
+  nav .brand .dot{
+    width:9px;height:9px;border-radius:50%;
+    background:radial-gradient(circle at 30% 30%,var(--pink-soft),var(--pink));
+    box-shadow:0 0 12px var(--pink),0 0 4px #fff;
+  }
+  nav .links{display:flex;gap:clamp(16px,3vw,34px);align-items:center;font-size:14.5px}
+  nav .links a{color:var(--muted);transition:color .2s;position:relative}
+  nav .links a:hover{color:var(--cream)}
+  nav .links a.pill{
+    color:var(--ink);background:var(--amber);
+    padding:8px 16px;border-radius:100px;font-weight:500;
+    box-shadow:0 0 18px rgba(255,210,94,.35);
+  }
+  nav .links a.pill:hover{color:var(--ink);filter:brightness(1.08)}
+  @media(max-width:560px){nav .links a.about{display:none}}
+
+  /* ---------- hero ---------- */
+  header.hero{
+    position:relative;min-height:100vh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:120px 20px 80px;
+    overflow:hidden;
+  }
+  header.hero .bg{
+    position:absolute;inset:0;
+    background:url('assets/hero-bg.jpg') center/cover no-repeat;
+    transform:scale(1.05);
+    z-index:0;
+  }
+  header.hero .bg::after{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 45%,rgba(10,6,18,.15),rgba(10,6,18,.72) 75%),
+      linear-gradient(180deg,rgba(10,6,18,.55),rgba(10,6,18,.35) 40%,var(--ink) 98%);
+  }
+  header.hero .inner{position:relative;z-index:2;max-width:880px}
+  .hero-logo{
+    width:min(78vw,440px);height:auto;margin:0 auto 6px;
+    display:block;
+    filter:drop-shadow(0 0 30px rgba(255,93,184,.45)) drop-shadow(0 0 60px rgba(108,76,255,.3));
+    animation:flickerIn 1.4s ease both, floaty 6s ease-in-out 1.4s infinite;
+  }
+  @keyframes flickerIn{
+    0%{opacity:0}
+    40%{opacity:.4}
+    45%{opacity:.1}
+    55%{opacity:.9}
+    60%{opacity:.5}
+    100%{opacity:1}
+  }
+  @keyframes floaty{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+  }
+  .hero .eyebrow{
+    font-family:var(--font-script);font-style:italic;
+    font-size:clamp(19px,2.6vw,26px);
+    color:var(--pink-soft);letter-spacing:.5px;margin-bottom:22px;
+    text-shadow:0 0 22px rgba(255,93,184,.4);
+  }
+  .hero h1{
+    font-family:var(--font-display);
+    font-weight:400;
+    font-size:clamp(30px,5.4vw,58px);
+    line-height:1.08;letter-spacing:-.5px;
+    margin-bottom:24px;
+  }
+  .hero h1 em{font-style:italic;color:var(--amber)}
+  .hero p.lead{
+    font-size:clamp(15px,1.8vw,18.5px);
+    color:var(--muted);max-width:540px;margin:0 auto 40px;
+  }
+  .hero .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:13px 26px;border-radius:100px;
+    font-family:var(--font-body);font-weight:500;font-size:15px;
+    cursor:pointer;transition:transform .2s,box-shadow .3s,background .3s;
+  }
+  .btn-primary{
+    background:linear-gradient(100deg,var(--pink),var(--violet));
+    color:#fff;box-shadow:0 6px 30px rgba(255,93,184,.35);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(255,93,184,.5)}
+  .btn-ghost{
+    border:1px solid rgba(246,239,228,.28);color:var(--cream);
+    background:rgba(246,239,228,.04);
+  }
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber);transform:translateY(-2px)}
+  .scroll-hint{
+    position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+    z-index:2;color:var(--muted);font-size:12px;letter-spacing:2px;
+    display:flex;flex-direction:column;align-items:center;gap:8px;
+    animation:floaty 2.4s ease-in-out infinite;
+  }
+  .scroll-hint .line{width:1px;height:34px;background:linear-gradient(var(--pink),transparent)}
+
+  /* ---------- section frame ---------- */
+  section{position:relative;padding:clamp(70px,10vw,130px) clamp(20px,5vw,60px);max-width:1180px;margin:0 auto}
+  .sec-label{
+    font-family:var(--font-body);font-size:12.5px;letter-spacing:3.5px;
+    text-transform:uppercase;color:var(--pink);margin-bottom:16px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .sec-label::before{content:"";width:26px;height:1px;background:var(--pink)}
+  .sec-title{
+    font-family:var(--font-display);font-weight:400;
+    font-size:clamp(26px,4vw,44px);line-height:1.12;letter-spacing:-.5px;
+    margin-bottom:20px;max-width:720px;
+  }
+  .sec-title em{font-style:italic;color:var(--amber)}
+  .sec-intro{color:var(--muted);max-width:600px;font-size:16.5px;margin-bottom:8px}
+
+  /* ---------- apps ---------- */
+  .apps{display:grid;gap:28px;margin-top:56px}
+  .app-card{
+    position:relative;display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,44px);
+    align-items:center;
+    padding:clamp(24px,4vw,44px);
+    border-radius:28px;
+    border:1px solid rgba(246,239,228,.09);
+    background:linear-gradient(150deg,var(--ink-2),rgba(18,10,31,.4));
+    overflow:hidden;transition:transform .35s,border-color .35s;
+  }
+  .app-card:hover{transform:translateY(-4px)}
+  .app-card .glow{
+    position:absolute;width:300px;height:300px;border-radius:50%;
+    filter:blur(80px);opacity:.5;z-index:0;pointer-events:none;
+    top:-80px;right:-60px;
+  }
+  .app-card > *{position:relative;z-index:1}
+  .app-icon{
+    width:clamp(120px,20vw,168px);height:auto;border-radius:26px;
+    display:block;
+  }
+  .app-icon.shadowed{box-shadow:0 20px 50px rgba(0,0,0,.5)}
+  .app-body h3{
+    font-family:var(--font-display);font-weight:500;
+    font-size:clamp(24px,3.4vw,34px);margin-bottom:6px;letter-spacing:-.3px;
+  }
+  .app-body .tag{
+    font-family:var(--font-script);font-style:italic;font-size:19px;
+    margin-bottom:16px;display:block;
+  }
+  .app-body p{color:var(--muted);font-size:15.5px;margin-bottom:22px;max-width:460px}
+  .app-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+  .chip{
+    font-size:12.5px;padding:6px 13px;border-radius:100px;
+    border:1px solid rgba(246,239,228,.16);color:var(--cream);
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .app-links{display:flex;gap:12px;flex-wrap:wrap}
+  .store-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 18px;border-radius:12px;font-size:13.5px;font-weight:500;
+    border:1px solid rgba(246,239,228,.2);transition:.25s;
+  }
+  .store-btn:hover{background:rgba(246,239,228,.07);transform:translateY(-2px)}
+  .store-btn.soon{opacity:.55;cursor:default}
+  .store-btn.soon:hover{transform:none;background:none}
+
+  /* readiary accent */
+  #readiary .glow{background:radial-gradient(circle,#8fae7f,transparent 70%)}
+  #readiary:hover{border-color:rgba(143,174,127,.45)}
+  #readiary .tag{color:var(--leaf)}
+  /* burn accent */
+  #burn .glow{background:radial-gradient(circle,#c0362f,transparent 70%)}
+  #burn:hover{border-color:rgba(192,54,47,.5)}
+  #burn .tag{color:#e0857f}
+
+  @media(max-width:620px){
+    .app-card{grid-template-columns:1fr;text-align:center;justify-items:center}
+    .app-body p{margin-left:auto;margin-right:auto}
+    .app-meta,.app-links{justify-content:center}
+    .sec-label{justify-content:flex-start}
+  }
+
+  /* ---------- ethos strip ---------- */
+  .ethos{
+    border-top:1px solid rgba(246,239,228,.08);
+    border-bottom:1px solid rgba(246,239,228,.08);
+    background:linear-gradient(180deg,rgba(18,10,31,.5),transparent);
+  }
+  .ethos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:38px;margin-top:48px}
+  .ethos-item .n{
+    font-family:var(--font-display);font-style:italic;font-size:15px;
+    color:var(--pink);margin-bottom:12px;letter-spacing:1px;
+  }
+  .ethos-item h4{font-family:var(--font-display);font-weight:500;font-size:20px;margin-bottom:8px}
+  .ethos-item p{color:var(--muted);font-size:14.5px}
+
+  /* ---------- footer ---------- */
+  footer{
+    padding:clamp(50px,8vw,80px) clamp(20px,5vw,60px) 40px;
+    max-width:1180px;margin:0 auto;
+    border-top:1px solid rgba(246,239,228,.08);
+    display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-end;
+  }
+  footer .f-brand{font-family:var(--font-display);font-size:22px;font-weight:600;margin-bottom:10px}
+  footer .f-tag{color:var(--muted);font-size:14px;max-width:280px}
+  footer .f-links{display:flex;flex-direction:column;gap:10px;font-size:14.5px}
+  footer .f-links a{color:var(--muted);transition:color .2s}
+  footer .f-links a:hover{color:var(--amber)}
+  footer .copy{width:100%;color:var(--muted);font-size:12.5px;opacity:.7;margin-top:20px}
+
+  ::selection{background:var(--pink);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#top" class="brand"><span class="dot"></span>ArtiFi Studio</a>
+  <div class="links">
+    <a href="#apps">Apps</a>
+    <a href="#ethos" class="about">Ethos</a>
+    <a href="privacy.html" class="pill">Privacy</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="bg"></div>
+  <div class="inner">
+    <img src="assets/studio-logo.png" alt="ArtiFi Studio" class="hero-logo">
+    <p class="eyebrow">a tiny studio for quiet software</p>
+    <h1>We make apps for the things<br><em>worth keeping.</em></h1>
+    <p class="lead">Reading notes you'll return to. Words you'll set on fire. Everything stays on your device — no servers, no accounts, no watching.</p>
+    <div class="cta-row">
+      <a href="#apps" class="btn btn-primary">See the apps →</a>
+      <a href="privacy.html" class="btn btn-ghost">Privacy policy</a>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>SCROLL</span><span class="line"></span></div>
+</header>
+
+<section id="apps">
+  <div class="sec-label">Our apps</div>
+  <h2 class="sec-title">Two apps. One idea: <em>your words are yours.</em></h2>
+  <p class="sec-intro">Both run entirely on your phone. Nothing you write ever leaves it.</p>
+
+  <div class="apps">
+
+    <!-- Readiary -->
+    <article class="app-card" id="readiary">
+      <div class="glow"></div>
+      <img src="assets/readiary.jpg" alt="Readiary app icon" class="app-icon shadowed">
+      <div class="app-body">
+        <h3>Readiary</h3>
+        <span class="tag">a reading journal that grows with you</span>
+        <p>Keep a shelf of everything you've read, capture the lines that stayed with you, and watch your own little library fill up — page by page, season by season.</p>
+        <div class="app-meta">
+          <span class="chip">📖 Reading notes</span>
+          <span class="chip">🌿 Your own library</span>
+          <span class="chip">🔒 On-device only</span>
+        </div>
+        <div class="app-links">
+          <a href="#" class="store-btn"> App Store</a>
+          <a href="#" class="store-btn">▶ Google Play</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Burn After Writing -->
+    <article class="app-card" id="burn">
+      <div class="glow"></div>
+      <img src="assets/burn.png" alt="Burn After Writing app icon" class="app-icon">
+      <div class="app-body">
+        <h3>Burn After Writing</h3>
+        <span class="tag">write it down, then let it go</span>
+        <p>Some thoughts only need to be said once. Write freely, honestly, with no one watching — then burn the page. Nothing is saved, nothing is sent. Just release.</p>
+        <div class="app-meta">
+          <span class="chip">🔥 Write &amp; release</span>
+          <span class="chip">🕯️ Nothing stored</span>
+          <span class="chip">🔒 On-device only</span>
+        </div>
+        <div class="app-links">
+          <a href="#" class="store-btn"> App Store</a>
+          <a href="#" class="store-btn">▶ Google Play</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="ethos" id="ethos">
+  <div class="sec-label">How we build</div>
+  <h2 class="sec-title">Small on purpose.</h2>
+  <p class="sec-intro">A studio can be one idea done carefully. Here's what we hold to.</p>
+  <div class="ethos-grid">
+    <div class="ethos-item">
+      <div class="n">i.</div>
+      <h4>Your device, your data</h4>
+      <p>No servers, no cloud, no accounts. What you write is stored only on your phone — we never see it.</p>
+    </div>
+    <div class="ethos-item">
+      <div class="n">ii.</div>
+      <h4>No tracking, ever</h4>
+      <p>We don't collect analytics on you, sell data, or run ads. There's nothing to sell because we keep nothing.</p>
+    </div>
+    <div class="ethos-item">
+      <div class="n">iii.</div>
+      <h4>Made to last</h4>
+      <p>Buy it once, keep it. Our apps work offline and don't depend on us staying online forever.</p>
+    </div>
+    <div class="ethos-item">
+      <div class="n">iv.</div>
+      <h4>More on the way</h4>
+      <p>Readiary and Burn After Writing are the start. We're building quietly toward the next few.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="f-brand">ArtiFi Studio</div>
+    <p class="f-tag">Quiet apps for the things worth keeping — and the things worth letting go.</p>
+  </div>
+  <div class="f-links">
+    <a href="#apps">Apps</a>
+    <a href="#ethos">Ethos</a>
+    <a href="privacy.html">Privacy Policy · 개인정보처리방침</a>
+    <a href="mailto:hello@artifistudio.com">hello@artifistudio.com</a>
+  </div>
+  <div class="copy">© 2026 ArtiFi Studio. All rights reserved.</div>
+</footer>
+
+<script>
+  // nav background solidify on scroll
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>{
+    nav.style.background = scrollY>40
+      ? 'rgba(10,6,18,.9)'
+      : 'linear-gradient(180deg,rgba(10,6,18,.82),rgba(10,6,18,0))';
+  });
+  // reveal on scroll
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity=1;e.target.style.transform='none';io.unobserve(e.target)}})
+  },{threshold:.15});
+  document.querySelectorAll('.app-card,.ethos-item,.sec-title,.sec-intro').forEach(el=>{
+    el.style.opacity=0;el.style.transform='translateY(24px)';
+    el.style.transition='opacity .7s ease,transform .7s ease';
+    io.observe(el);
+  });
+</script>
+</body>
+</html>
