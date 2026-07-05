@@ -1,346 +1,432 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Privacy Policy | ArtiFi Studio</title>
-  <meta name="description" content="Privacy Policy for ArtiFi Studio apps.">
-  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy | ArtiFi Studio</title>
+<meta name="description" content="Privacy Policy for ArtiFi Studio apps.">
+
 <style>
-:root {
-  --bg: #050612;
-  --panel: rgba(255,255,255,0.075);
-  --panel2: rgba(255,255,255,0.11);
-  --text: #ffffff;
-  --muted: rgba(255,255,255,0.74);
-  --pink: #ff4fd8;
-  --yellow: #fff25c;
-  --purple: #8b5cff;
-  --green: #a9ff6a;
-  --red: #ff5a68;
-  --border: rgba(255,255,255,0.16);
-  --shadow: 0 22px 70px rgba(0,0,0,0.45);
+:root{
+  --bg:#050510;
+  --ink:#ffffff;
+  --muted:rgba(255,255,255,.72);
+  --faint:rgba(255,255,255,.52);
+  --glass:rgba(255,255,255,.075);
+  --glass-strong:rgba(255,255,255,.12);
+  --border:rgba(255,255,255,.15);
+  --pink:#ff5bd8;
+  --yellow:#fff15c;
+  --purple:#8b5cff;
+  --green:#adff72;
+  --red:#ff6470;
+  --shadow:0 26px 90px rgba(0,0,0,.48);
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.65;
   background:
-    radial-gradient(circle at 18% 10%, rgba(45, 54, 255, 0.45), transparent 28%),
-    radial-gradient(circle at 75% 18%, rgba(255, 0, 140, 0.26), transparent 28%),
-    radial-gradient(circle at 52% 48%, rgba(123, 67, 255, 0.18), transparent 32%),
-    #050612;
-  color: var(--text);
-  line-height: 1.65;
+    radial-gradient(circle at 10% 10%,rgba(83,61,255,.20),transparent 28%),
+    radial-gradient(circle at 88% 14%,rgba(255,91,216,.15),transparent 28%),
+    #050510;
 }
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("artifi-studio.png");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.22;
-  filter: blur(0.2px);
-  z-index: -2;
+a{color:inherit}
+.site-header{
+  position:fixed;
+  inset:0 0 auto 0;
+  z-index:30;
+  backdrop-filter:blur(22px);
+  background:linear-gradient(180deg,rgba(3,4,14,.78),rgba(3,4,14,.26));
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(2,3,12,0.72), rgba(2,3,12,0.95));
-  z-index: -1;
+.nav{
+  max-width:1180px;
+  margin:0 auto;
+  padding:18px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
-a { color: inherit; }
-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(18px);
-  background: rgba(3,4,14,0.72);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+.nav-logo{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
 }
-.navbar {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 18px 22px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.nav-logo img{
+  width:154px;
+  height:auto;
+  display:block;
+  filter:drop-shadow(0 0 16px rgba(255,91,216,.34));
 }
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  font-weight: 850;
-  letter-spacing: -0.4px;
-  font-size: 21px;
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:26px;
 }
-.logo img {
-  width: 120px;
-  height: auto;
-  filter: drop-shadow(0 0 18px rgba(255, 79, 216, 0.55));
+.nav-links a{
+  color:rgba(255,255,255,.74);
+  text-decoration:none;
+  font-weight:650;
+  font-size:15px;
 }
-nav a {
-  margin-left: 24px;
-  text-decoration: none;
-  color: var(--muted);
-  font-weight: 650;
+.nav-links a:hover{color:#fff}
+.nav-cta{
+  padding:9px 15px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:999px;
+  background:rgba(255,255,255,.055);
 }
-nav a:hover { color: #fff; }
-main {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 34px 22px 80px;
+.hero{
+  min-height:100vh;
+  position:relative;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
 }
-.hero {
-  min-height: 640px;
-  display: grid;
-  grid-template-columns: 1.02fr .98fr;
-  gap: 46px;
-  align-items: center;
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background-image:url("artifistudio-bg.png");
+  background-size:cover;
+  background-position:center;
+  transform:scale(1.02);
 }
-.hero-logo {
-  width: min(440px, 92%);
-  margin-bottom: 28px;
-  filter: drop-shadow(0 0 28px rgba(255, 79, 216, 0.45));
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 50% 38%,rgba(0,0,0,.05),rgba(0,0,0,.54) 58%,rgba(0,0,0,.9) 100%),
+    linear-gradient(180deg,rgba(5,5,16,.08),rgba(5,5,16,.92) 92%,#050510 100%);
 }
-.eyebrow {
-  display: inline-flex;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid var(--border);
-  color: rgba(255,255,255,0.86);
-  font-size: 14px;
-  font-weight: 750;
-  margin-bottom: 20px;
+.hero-content{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:1040px;
+  padding:150px 22px 90px;
+  text-align:center;
 }
-h1 {
-  margin: 0 0 22px;
-  font-size: clamp(46px, 7vw, 82px);
-  line-height: .98;
-  letter-spacing: -2.6px;
+.hero-logo{
+  width:min(520px,86vw);
+  height:auto;
+  display:block;
+  margin:0 auto 28px;
+  filter:drop-shadow(0 0 22px rgba(255,91,216,.5)) drop-shadow(0 0 30px rgba(255,241,92,.18));
 }
-.gradient-text {
-  background: linear-gradient(90deg, var(--pink), #ffb45f, var(--yellow));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  margin-bottom:24px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.08);
+  color:rgba(255,255,255,.84);
+  font-size:14px;
+  font-weight:760;
 }
-h2 {
-  margin: 0 0 12px;
-  font-size: clamp(32px, 4vw, 50px);
-  line-height: 1.08;
-  letter-spacing: -1.3px;
+h1{
+  margin:0;
+  font-size:clamp(44px,7vw,86px);
+  line-height:.98;
+  letter-spacing:-3px;
 }
-h3 {
-  margin: 0 0 8px;
-  font-size: 25px;
-  letter-spacing: -0.5px;
+.gradient{
+  background:linear-gradient(90deg,var(--pink),#ffbd65,var(--yellow));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
-p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 18px;
+.lead{
+  max-width:760px;
+  margin:24px auto 0;
+  color:rgba(255,255,255,.80);
+  font-size:clamp(19px,2vw,24px);
 }
-.lead {
-  max-width: 650px;
-  font-size: 21px;
+.actions{
+  margin-top:34px;
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
 }
-.actions {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 32px;
+.button{
+  min-height:52px;
+  padding:14px 24px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:850;
+  letter-spacing:-.2px;
 }
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50px;
-  padding: 13px 22px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 850;
+.button.primary{
+  background:linear-gradient(90deg,#a84cff,var(--pink),#ffd84d);
+  box-shadow:0 20px 46px rgba(255,91,216,.24);
 }
-.button.primary {
-  background: linear-gradient(90deg, #b63cff, #ff4fd8, #ffd950);
-  color: #fff;
-  box-shadow: 0 16px 34px rgba(255, 79, 216, 0.23);
+.button.secondary{
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.065);
 }
-.button.secondary {
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.04);
-  color: #fff;
+.scroll-hint{
+  position:absolute;
+  bottom:28px;
+  left:50%;
+  transform:translateX(-50%);
+  color:rgba(255,255,255,.48);
+  font-size:13px;
 }
-.showcase {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
+main{
+  background:
+    radial-gradient(circle at 10% 10%,rgba(139,92,255,.18),transparent 30%),
+    radial-gradient(circle at 86% 16%,rgba(255,91,216,.12),transparent 28%),
+    #050510;
 }
-.app-tile {
-  background: linear-gradient(180deg, rgba(255,255,255,0.13), rgba(255,255,255,0.055));
-  border: 1px solid var(--border);
-  border-radius: 34px;
-  padding: 24px;
-  text-align: center;
-  box-shadow: var(--shadow);
+.container{
+  max-width:1180px;
+  margin:0 auto;
+  padding:104px 22px;
 }
-.app-tile img {
-  width: 100%;
-  border-radius: 28px;
-  box-shadow: 0 20px 46px rgba(0,0,0,0.36);
-  margin-bottom: 20px;
+.section-head{
+  max-width:760px;
+  margin:0 auto 44px;
+  text-align:center;
 }
-.app-tile.bookleaf h3 { color: var(--green); }
-.app-tile.burn h3 { color: var(--red); }
-.status {
-  display: inline-flex;
-  margin-top: 16px;
-  padding: 7px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.15);
-  color: rgba(255,255,255,0.82);
-  font-size: 13px;
-  font-weight: 800;
+h2{
+  margin:0 0 14px;
+  font-size:clamp(34px,5vw,58px);
+  line-height:1.05;
+  letter-spacing:-1.9px;
 }
-section { margin-top: 96px; }
-.section-head {
-  text-align: center;
-  max-width: 780px;
-  margin: 0 auto 34px;
+h3{
+  margin:0 0 10px;
+  font-size:28px;
+  line-height:1.18;
+  letter-spacing:-.8px;
 }
-.apps-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
+p{
+  margin:0;
+  color:var(--muted);
+  font-size:18px;
 }
-.app-card {
-  display: grid;
-  grid-template-columns: 130px 1fr;
-  gap: 22px;
-  align-items: center;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 30px;
-  padding: 24px;
-  box-shadow: 0 18px 46px rgba(0,0,0,0.24);
+.apps-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
 }
-.app-card img {
-  width: 130px;
-  height: 130px;
-  object-fit: cover;
-  border-radius: 28px;
+.app-card{
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--border);
+  border-radius:38px;
+  background:linear-gradient(180deg,rgba(255,255,255,.13),rgba(255,255,255,.055));
+  box-shadow:var(--shadow);
 }
-.soon-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
+.app-card::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  background:radial-gradient(circle at 30% 0%,rgba(255,255,255,.16),transparent 35%);
+  pointer-events:none;
 }
-.soon-card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 30px;
-  padding: 34px;
+.app-content{
+  position:relative;
+  z-index:1;
+  padding:30px;
+  display:grid;
+  grid-template-columns:184px 1fr;
+  gap:28px;
+  align-items:center;
 }
-.spark {
-  width: 70px;
-  height: 70px;
-  border-radius: 24px;
-  display: grid;
-  place-items: center;
-  font-size: 34px;
-  margin-bottom: 20px;
-  background: radial-gradient(circle, rgba(255,79,216,0.28), rgba(139,92,255,0.11));
-  border: 1px solid rgba(255,255,255,0.12);
+.app-icon{
+  width:184px;
+  height:184px;
+  object-fit:cover;
+  border-radius:40px;
+  box-shadow:0 24px 60px rgba(0,0,0,.45);
 }
-.about {
-  background: linear-gradient(135deg, rgba(255,255,255,0.11), rgba(255,255,255,0.045));
-  border: 1px solid var(--border);
-  border-radius: 36px;
-  padding: 42px;
-  box-shadow: var(--shadow);
+.kicker{
+  font-size:13px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  margin-bottom:9px;
 }
-.legal-page {
-  max-width: 900px;
-  margin: 60px auto 0;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid var(--border);
-  border-radius: 34px;
-  padding: 42px;
-  box-shadow: var(--shadow);
+.green{color:var(--green)}
+.red{color:var(--red)}
+.status{
+  display:inline-flex;
+  margin-top:20px;
+  padding:7px 12px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.06);
+  border-radius:999px;
+  color:rgba(255,255,255,.82);
+  font-size:13px;
+  font-weight:850;
 }
-.legal-page h1 { font-size: clamp(38px, 5vw, 62px); }
-.legal-page h2 { margin-top: 36px; font-size: 27px; }
-.legal-page p { margin-top: 10px; }
-footer {
-  border-top: 1px solid rgba(255,255,255,0.09);
-  background: rgba(3,4,14,0.55);
+.coming-grid,.values{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
 }
-.footer-inner {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 34px 22px 46px;
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-  color: var(--muted);
+.soon-card,.value-card{
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.07);
+  border-radius:34px;
+  padding:34px;
 }
-.footer-inner img {
-  width: 150px;
-  display: block;
-  margin-bottom: 12px;
+.spark{
+  width:74px;
+  height:74px;
+  display:grid;
+  place-items:center;
+  margin-bottom:22px;
+  border-radius:25px;
+  font-size:36px;
+  background:radial-gradient(circle,rgba(255,91,216,.34),rgba(139,92,255,.12));
+  border:1px solid rgba(255,255,255,.14);
 }
-.footer-inner a {
-  color: var(--muted);
-  text-decoration: none;
-  margin-left: 18px;
+.about-panel{
+  border:1px solid var(--border);
+  border-radius:42px;
+  padding:46px;
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.045));
+  box-shadow:var(--shadow);
 }
-@media (max-width: 900px) {
-  .hero,
-  .showcase,
-  .apps-grid,
-  .soon-grid {
-    grid-template-columns: 1fr;
-  }
-  .hero { min-height: auto; padding-top: 30px; }
-  .app-card { grid-template-columns: 96px 1fr; }
-  .app-card img { width: 96px; height: 96px; border-radius: 22px; }
+.values{
+  grid-template-columns:repeat(3,1fr);
+  margin-top:34px;
 }
-@media (max-width: 640px) {
-  .navbar { align-items: flex-start; flex-direction: column; gap: 14px; }
-  nav a { margin-left: 0; margin-right: 15px; }
-  .logo img { width: 104px; }
-  .hero-logo { width: 280px; }
-  .app-card { grid-template-columns: 1fr; }
-  .app-card img { width: 120px; height: 120px; }
-  .about, .legal-page { padding: 28px; }
+.value-card{
+  padding:28px;
+  border-radius:30px;
+}
+.legal-hero{
+  min-height:360px;
+  position:relative;
+  display:grid;
+  place-items:end center;
+  overflow:hidden;
+}
+.legal-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:url("artifistudio-bg.png");
+  background-size:cover;
+  background-position:center;
+  opacity:.52;
+}
+.legal-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(5,5,16,.45),#050510);
+}
+.legal-hero-inner{
+  position:relative;
+  z-index:1;
+  max-width:900px;
+  width:100%;
+  padding:140px 22px 60px;
+}
+.legal-page{
+  max-width:900px;
+  margin:0 auto;
+  border:1px solid var(--border);
+  border-radius:36px;
+  padding:46px;
+  background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.055));
+  box-shadow:var(--shadow);
+}
+.legal-page h1{
+  margin:0;
+  font-size:clamp(42px,6vw,68px);
+  line-height:1;
+  letter-spacing:-2px;
+}
+.legal-page h2{
+  margin-top:38px;
+  font-size:28px;
+}
+.legal-page p{margin-top:10px}
+.footer{
+  background:#03040d;
+  border-top:1px solid rgba(255,255,255,.10);
+}
+.footer-inner{
+  max-width:1180px;
+  margin:0 auto;
+  padding:38px 22px 50px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  flex-wrap:wrap;
+  color:rgba(255,255,255,.62);
+}
+.footer-logo{
+  width:150px;
+  display:block;
+  margin-bottom:10px;
+  filter:drop-shadow(0 0 12px rgba(255,91,216,.22));
+}
+.footer a{
+  color:rgba(255,255,255,.68);
+  text-decoration:none;
+  margin-left:18px;
+}
+@media(max-width:940px){
+  .apps-grid,.coming-grid{grid-template-columns:1fr}
+  .app-content{grid-template-columns:150px 1fr}
+  .app-icon{width:150px;height:150px;border-radius:32px}
+}
+@media(max-width:720px){
+  .nav{align-items:flex-start;flex-direction:column;gap:12px}
+  .nav-links{gap:16px;flex-wrap:wrap}
+  .nav-logo img{width:132px}
+  .hero-logo{width:min(390px,90vw)}
+  .hero-content{padding-top:145px}
+  .app-content{grid-template-columns:1fr}
+  .app-icon{width:156px;height:156px}
+  .values{grid-template-columns:1fr}
+  .about-panel,.legal-page{padding:30px}
 }
 </style>
 
 </head>
 <body>
-  
-<header>
-  <div class="navbar">
-    <a class="logo" href="index.html">
-      <img src="artifi-studio.png" alt="ArtiFi Studio logo">
+
+<header class="site-header">
+  <div class="nav">
+    <a class="nav-logo" href="index.html" aria-label="ArtiFi Studio home">
+      <img src="artifistudio-logo.png" alt="ArtiFi Studio">
     </a>
-    <nav>
+    <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="index.html#apps">Apps</a>
       <a href="index.html#about">About</a>
       <a href="privacy.html">Privacy</a>
-      <a href="support.html">Support</a>
+      <a class="nav-cta" href="support.html">Support</a>
     </nav>
   </div>
 </header>
 
-  <main>
+<section class="legal-hero">
+  <div class="legal-hero-inner">
+    <img class="footer-logo" src="artifistudio-logo.png" alt="ArtiFi Studio">
+  </div>
+</section>
+<main>
+  <section class="container">
     <article class="legal-page">
       <h1>Privacy Policy</h1>
       <p><strong>Last updated:</strong> July 5, 2026</p>
@@ -372,12 +458,13 @@ footer {
       <h2>Contact Us</h2>
       <p>If you have any questions about this Privacy Policy, please contact us at <strong>artifistudio@gmail.com</strong>.</p>
     </article>
-  </main>
-  
-<footer>
+  </section>
+</main>
+
+<footer class="footer">
   <div class="footer-inner">
     <div>
-      <img src="artifi-studio.png" alt="ArtiFi Studio logo">
+      <img class="footer-logo" src="artifistudio-logo.png" alt="ArtiFi Studio">
       <div>© 2026 ArtiFi Studio. All rights reserved.</div>
     </div>
     <div>
