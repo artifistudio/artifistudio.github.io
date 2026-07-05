@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support | ArtiFi Studio</title>
+  
+<style>
+  :root {
+    --bg: #f7f4ee;
+    --card: #ffffff;
+    --text: #253126;
+    --muted: #667064;
+    --accent: #6f8f5f;
+    --accent-dark: #4f6f42;
+    --border: #e6dfd3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  header {
+    padding: 28px 20px;
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand {
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.3px;
+  }
+  nav a {
+    margin-left: 18px;
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  nav a:hover { color: var(--accent-dark); }
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .hero {
+    background: linear-gradient(135deg, #ffffff, #edf3e8);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 56px 36px;
+    margin-top: 20px;
+    box-shadow: 0 12px 30px rgba(60, 70, 55, 0.08);
+  }
+  h1 {
+    font-size: clamp(38px, 6vw, 64px);
+    line-height: 1.05;
+    margin: 0 0 18px;
+    letter-spacing: -1.5px;
+  }
+  h2 {
+    margin-top: 42px;
+    font-size: 30px;
+    letter-spacing: -0.8px;
+  }
+  h3 { margin-top: 28px; }
+  p { color: var(--muted); font-size: 17px; }
+  .button {
+    display: inline-block;
+    margin-top: 18px;
+    background: var(--accent);
+    color: #fff;
+    padding: 13px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 24px;
+  }
+  .card strong { display:block; margin-bottom: 8px; }
+  .small { font-size: 14px; color: var(--muted); }
+  footer {
+    max-width: 960px;
+    margin: 50px auto 0;
+    padding: 30px 20px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+  @media (max-width: 640px) {
+    header { display:block; }
+    nav { margin-top: 12px; }
+    nav a { margin-left: 0; margin-right: 14px; }
+    .hero { padding: 38px 24px; border-radius: 22px; }
+  }
+</style>
+
+</head>
+<body>
+  <header>
+    <div class="brand">ArtiFi Studio</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Support</h1>
+      <p>Need help with BookLeaf? We are here to help.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>For questions, bug reports, or feedback, please email us at:</p>
+      <p><strong>artifistudio.help@gmail.com</strong></p>
+
+      <h2>About BookLeaf</h2>
+      <p>BookLeaf is a reading journal app that helps users save books, write notes, and keep track of their reading journey.</p>
+
+      <h2>Data and Privacy</h2>
+      <p>BookLeaf stores your reading records locally on your device. Please make sure to keep your own backup if you change devices or delete the app.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div>© 2026 ArtiFi Studio. All rights reserved.</div>
+  </footer>
+</body>
+</html>
