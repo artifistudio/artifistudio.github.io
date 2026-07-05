@@ -4,155 +4,437 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ArtiFi Studio</title>
+  <meta name="description" content="ArtiFi Studio creates thoughtful, beautiful, and reliable mobile apps.">
   
 <style>
-  :root {
-    --bg: #f7f4ee;
-    --card: #ffffff;
-    --text: #253126;
-    --muted: #667064;
-    --accent: #6f8f5f;
-    --accent-dark: #4f6f42;
-    --border: #e6dfd3;
+:root {
+  --bg: #050612;
+  --panel: rgba(255,255,255,0.075);
+  --panel2: rgba(255,255,255,0.11);
+  --text: #ffffff;
+  --muted: rgba(255,255,255,0.74);
+  --pink: #ff4fd8;
+  --yellow: #fff25c;
+  --purple: #8b5cff;
+  --green: #a9ff6a;
+  --red: #ff5a68;
+  --border: rgba(255,255,255,0.16);
+  --shadow: 0 22px 70px rgba(0,0,0,0.45);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background:
+    radial-gradient(circle at 18% 10%, rgba(45, 54, 255, 0.45), transparent 28%),
+    radial-gradient(circle at 75% 18%, rgba(255, 0, 140, 0.26), transparent 28%),
+    radial-gradient(circle at 52% 48%, rgba(123, 67, 255, 0.18), transparent 32%),
+    #050612;
+  color: var(--text);
+  line-height: 1.65;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("artifi-studio.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.22;
+  filter: blur(0.2px);
+  z-index: -2;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(2,3,12,0.72), rgba(2,3,12,0.95));
+  z-index: -1;
+}
+a { color: inherit; }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(18px);
+  background: rgba(3,4,14,0.72);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.navbar {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  font-weight: 850;
+  letter-spacing: -0.4px;
+  font-size: 21px;
+}
+.logo img {
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 0 18px rgba(255, 79, 216, 0.55));
+}
+nav a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 650;
+}
+nav a:hover { color: #fff; }
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 34px 22px 80px;
+}
+.hero {
+  min-height: 640px;
+  display: grid;
+  grid-template-columns: 1.02fr .98fr;
+  gap: 46px;
+  align-items: center;
+}
+.hero-logo {
+  width: min(440px, 92%);
+  margin-bottom: 28px;
+  filter: drop-shadow(0 0 28px rgba(255, 79, 216, 0.45));
+}
+.eyebrow {
+  display: inline-flex;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid var(--border);
+  color: rgba(255,255,255,0.86);
+  font-size: 14px;
+  font-weight: 750;
+  margin-bottom: 20px;
+}
+h1 {
+  margin: 0 0 22px;
+  font-size: clamp(46px, 7vw, 82px);
+  line-height: .98;
+  letter-spacing: -2.6px;
+}
+.gradient-text {
+  background: linear-gradient(90deg, var(--pink), #ffb45f, var(--yellow));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+h2 {
+  margin: 0 0 12px;
+  font-size: clamp(32px, 4vw, 50px);
+  line-height: 1.08;
+  letter-spacing: -1.3px;
+}
+h3 {
+  margin: 0 0 8px;
+  font-size: 25px;
+  letter-spacing: -0.5px;
+}
+p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+.lead {
+  max-width: 650px;
+  font-size: 21px;
+}
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 850;
+}
+.button.primary {
+  background: linear-gradient(90deg, #b63cff, #ff4fd8, #ffd950);
+  color: #fff;
+  box-shadow: 0 16px 34px rgba(255, 79, 216, 0.23);
+}
+.button.secondary {
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+}
+.showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.app-tile {
+  background: linear-gradient(180deg, rgba(255,255,255,0.13), rgba(255,255,255,0.055));
+  border: 1px solid var(--border);
+  border-radius: 34px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.app-tile img {
+  width: 100%;
+  border-radius: 28px;
+  box-shadow: 0 20px 46px rgba(0,0,0,0.36);
+  margin-bottom: 20px;
+}
+.app-tile.bookleaf h3 { color: var(--green); }
+.app-tile.burn h3 { color: var(--red); }
+.status {
+  display: inline-flex;
+  margin-top: 16px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.82);
+  font-size: 13px;
+  font-weight: 800;
+}
+section { margin-top: 96px; }
+.section-head {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 34px;
+}
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+.app-card {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 22px;
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 24px;
+  box-shadow: 0 18px 46px rgba(0,0,0,0.24);
+}
+.app-card img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 28px;
+}
+.soon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+.soon-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 34px;
+}
+.spark {
+  width: 70px;
+  height: 70px;
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  font-size: 34px;
+  margin-bottom: 20px;
+  background: radial-gradient(circle, rgba(255,79,216,0.28), rgba(139,92,255,0.11));
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.about {
+  background: linear-gradient(135deg, rgba(255,255,255,0.11), rgba(255,255,255,0.045));
+  border: 1px solid var(--border);
+  border-radius: 36px;
+  padding: 42px;
+  box-shadow: var(--shadow);
+}
+.legal-page {
+  max-width: 900px;
+  margin: 60px auto 0;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid var(--border);
+  border-radius: 34px;
+  padding: 42px;
+  box-shadow: var(--shadow);
+}
+.legal-page h1 { font-size: clamp(38px, 5vw, 62px); }
+.legal-page h2 { margin-top: 36px; font-size: 27px; }
+.legal-page p { margin-top: 10px; }
+footer {
+  border-top: 1px solid rgba(255,255,255,0.09);
+  background: rgba(3,4,14,0.55);
+}
+.footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 34px 22px 46px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  color: var(--muted);
+}
+.footer-inner img {
+  width: 150px;
+  display: block;
+  margin-bottom: 12px;
+}
+.footer-inner a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 18px;
+}
+@media (max-width: 900px) {
+  .hero,
+  .showcase,
+  .apps-grid,
+  .soon-grid {
+    grid-template-columns: 1fr;
   }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-  }
-  header {
-    padding: 28px 20px;
-    max-width: 960px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .brand {
-    font-weight: 800;
-    font-size: 22px;
-    letter-spacing: -0.3px;
-  }
-  nav a {
-    margin-left: 18px;
-    color: var(--muted);
-    text-decoration: none;
-    font-weight: 600;
-  }
-  nav a:hover { color: var(--accent-dark); }
-  main {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  .hero {
-    background: linear-gradient(135deg, #ffffff, #edf3e8);
-    border: 1px solid var(--border);
-    border-radius: 28px;
-    padding: 56px 36px;
-    margin-top: 20px;
-    box-shadow: 0 12px 30px rgba(60, 70, 55, 0.08);
-  }
-  h1 {
-    font-size: clamp(38px, 6vw, 64px);
-    line-height: 1.05;
-    margin: 0 0 18px;
-    letter-spacing: -1.5px;
-  }
-  h2 {
-    margin-top: 42px;
-    font-size: 30px;
-    letter-spacing: -0.8px;
-  }
-  h3 { margin-top: 28px; }
-  p { color: var(--muted); font-size: 17px; }
-  .button {
-    display: inline-block;
-    margin-top: 18px;
-    background: var(--accent);
-    color: #fff;
-    padding: 13px 20px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 700;
-  }
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 18px;
-    margin-top: 24px;
-  }
-  .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 22px;
-    padding: 24px;
-  }
-  .card strong { display:block; margin-bottom: 8px; }
-  .small { font-size: 14px; color: var(--muted); }
-  footer {
-    max-width: 960px;
-    margin: 50px auto 0;
-    padding: 30px 20px;
-    color: var(--muted);
-    border-top: 1px solid var(--border);
-  }
-  @media (max-width: 640px) {
-    header { display:block; }
-    nav { margin-top: 12px; }
-    nav a { margin-left: 0; margin-right: 14px; }
-    .hero { padding: 38px 24px; border-radius: 22px; }
-  }
+  .hero { min-height: auto; padding-top: 30px; }
+  .app-card { grid-template-columns: 96px 1fr; }
+  .app-card img { width: 96px; height: 96px; border-radius: 22px; }
+}
+@media (max-width: 640px) {
+  .navbar { align-items: flex-start; flex-direction: column; gap: 14px; }
+  nav a { margin-left: 0; margin-right: 15px; }
+  .logo img { width: 104px; }
+  .hero-logo { width: 280px; }
+  .app-card { grid-template-columns: 1fr; }
+  .app-card img { width: 120px; height: 120px; }
+  .about, .legal-page { padding: 28px; }
+}
 </style>
 
 </head>
 <body>
-  <header>
-    <div class="brand">ArtiFi Studio</div>
+  
+<header>
+  <div class="navbar">
+    <a class="logo" href="index.html">
+      <img src="artifi-studio.png" alt="ArtiFi Studio logo">
+    </a>
     <nav>
       <a href="index.html">Home</a>
+      <a href="index.html#apps">Apps</a>
+      <a href="index.html#about">About</a>
       <a href="privacy.html">Privacy</a>
       <a href="support.html">Support</a>
     </nav>
-  </header>
+  </div>
+</header>
 
   <main>
     <section class="hero">
-      <h1>Simple apps for everyday creativity.</h1>
-      <p>ArtiFi Studio creates thoughtful, privacy-friendly mobile apps designed to be easy, useful, and beautiful.</p>
-      <a class="button" href="#bookleaf">Meet BookLeaf</a>
+      <div>
+        <img class="hero-logo" src="artifi-studio.png" alt="ArtiFi Studio">
+        <div class="eyebrow">Independent mobile app studio</div>
+        <h1>Creating meaningful <span class="gradient-text">experiences through apps.</span></h1>
+        <p class="lead">ArtiFi Studio builds thoughtful, beautiful, and reliable mobile apps that support everyday creativity, reflection, and personal organization.</p>
+        <div class="actions">
+          <a class="button primary" href="#apps">Our Apps →</a>
+          <a class="button secondary" href="#about">About Us</a>
+        </div>
+      </div>
+
+      <div class="showcase">
+        <div class="app-tile bookleaf">
+          <img src="bookleaf-icon.png" alt="BookLeaf app icon">
+          <h3>BookLeaf</h3>
+          <p>Your reading journey, beautifully organized.</p>
+          <span class="status">Launching soon</span>
+        </div>
+        <div class="app-tile burn">
+          <img src="burn-after-writing-icon.png" alt="Burn After Writing app icon">
+          <h3>Burn After Writing</h3>
+          <p>Write freely. Let it out. Let it go.</p>
+          <span class="status">Launching soon</span>
+        </div>
+      </div>
     </section>
 
-    <section id="bookleaf">
-      <h2>BookLeaf</h2>
-      <p>BookLeaf is a reading journal app that helps you save books, write reading notes, and build your personal reading history.</p>
-      <div class="cards">
-        <div class="card">
-          <strong>📚 Reading Journal</strong>
-          <p>Keep track of books you are reading, finished, or want to read.</p>
+    <section id="apps">
+      <div class="section-head">
+        <h2>Our Apps</h2>
+        <p>A growing collection of focused mobile apps designed with care.</p>
+      </div>
+
+      <div class="apps-grid">
+        <div class="app-card">
+          <img src="bookleaf-icon.png" alt="BookLeaf app icon">
+          <div>
+            <h3>BookLeaf</h3>
+            <p>BookLeaf is a reading journal app that helps users save books, write notes, and build a personal reading history.</p>
+            <span class="status">Launching soon</span>
+          </div>
         </div>
-        <div class="card">
-          <strong>✍️ Personal Notes</strong>
-          <p>Write your thoughts, reflections, and favorite moments from each book.</p>
-        </div>
-        <div class="card">
-          <strong>🔒 Local First</strong>
-          <p>Your reading records are stored on your device. BookLeaf is designed with privacy in mind.</p>
+
+        <div class="app-card">
+          <img src="burn-after-writing-icon.png" alt="Burn After Writing app icon">
+          <div>
+            <h3>Burn After Writing</h3>
+            <p>A private writing app for thoughts, reflections, and words meant to be released.</p>
+            <span class="status">Launching soon</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>Contact</h2>
-      <p>For support, questions, or feedback, please email us at <strong>artifistudio.help@gmail.com</strong>.</p>
+      <div class="section-head">
+        <h2>More to come</h2>
+        <p>ArtiFi Studio is already preparing more apps for future release.</p>
+      </div>
+      <div class="soon-grid">
+        <div class="soon-card">
+          <div class="spark">✦</div>
+          <h3>New App</h3>
+          <p>Something thoughtful and useful is coming soon.</p>
+          <span class="status">In development</span>
+        </div>
+        <div class="soon-card">
+          <div class="spark">✦</div>
+          <h3>New App</h3>
+          <p>Another app is being designed as part of the ArtiFi Studio collection.</p>
+          <span class="status">In development</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About ArtiFi Studio</h2>
+      <p>ArtiFi Studio is an independent app studio focused on creating simple, polished, and privacy-friendly apps. We care about calm design, useful features, and products that feel personal from the first launch.</p>
     </section>
   </main>
+  
+<footer>
+  <div class="footer-inner">
+    <div>
+      <img src="artifi-studio.png" alt="ArtiFi Studio logo">
+      <div>© 2026 ArtiFi Studio. All rights reserved.</div>
+    </div>
+    <div>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="support.html">Support</a>
+    </div>
+  </div>
+</footer>
 
-  <footer>
-    <div>© 2026 ArtiFi Studio. All rights reserved.</div>
-  </footer>
 </body>
 </html>
