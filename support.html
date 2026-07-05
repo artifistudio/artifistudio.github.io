@@ -18,8 +18,13 @@
   --pink:#ff5bd8;
   --yellow:#fff15c;
   --purple:#8b5cff;
-  --green:#adff72;
-  --red:#ff6470;
+  --sage:#6F8F5F;
+  --olive:#4F6B46;
+  --ivory:#F8F4EA;
+  --paper:#FFFDF8;
+  --leaf:#A7C48A;
+  --gold:#D8B86A;
+  --text:#263127;
   --shadow:0 26px 90px rgba(0,0,0,.48);
 }
 *{box-sizing:border-box}
@@ -29,10 +34,7 @@ body{
   color:var(--ink);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   line-height:1.65;
-  background:
-    radial-gradient(circle at 10% 10%,rgba(83,61,255,.20),transparent 28%),
-    radial-gradient(circle at 88% 14%,rgba(255,91,216,.15),transparent 28%),
-    #050510;
+  background:#050510;
 }
 a{color:inherit}
 .site-header{
@@ -40,35 +42,30 @@ a{color:inherit}
   inset:0 0 auto 0;
   z-index:30;
   backdrop-filter:blur(22px);
-  background:linear-gradient(180deg,rgba(3,4,14,.78),rgba(3,4,14,.26));
+  background:linear-gradient(180deg,rgba(3,4,14,.78),rgba(3,4,14,.28));
   border-bottom:1px solid rgba(255,255,255,.08);
 }
 .nav{
   max-width:1180px;
   margin:0 auto;
-  padding:18px 22px;
+  padding:17px 22px;
   display:flex;
   align-items:center;
   justify-content:space-between;
 }
-.nav-logo{
-  display:flex;
-  align-items:center;
-  text-decoration:none;
-}
 .nav-logo img{
-  width:154px;
+  width:142px;
   height:auto;
   display:block;
-  filter:drop-shadow(0 0 16px rgba(255,91,216,.34));
+  filter:drop-shadow(0 0 14px rgba(255,91,216,.32));
 }
 .nav-links{
   display:flex;
   align-items:center;
-  gap:26px;
+  gap:24px;
 }
 .nav-links a{
-  color:rgba(255,255,255,.74);
+  color:rgba(255,255,255,.76);
   text-decoration:none;
   font-weight:650;
   font-size:15px;
@@ -87,42 +84,45 @@ a{color:inherit}
   place-items:center;
   overflow:hidden;
 }
-.hero-bg{
+.hero::before{
+  content:"";
   position:absolute;
   inset:0;
-  background-image:url("artifistudio-bg.png");
+  background-image:url("artifistudio_bg.png");
   background-size:cover;
   background-position:center;
   transform:scale(1.02);
 }
-.hero-overlay{
+.hero::after{
+  content:"";
   position:absolute;
   inset:0;
   background:
-    radial-gradient(circle at 50% 38%,rgba(0,0,0,.05),rgba(0,0,0,.54) 58%,rgba(0,0,0,.9) 100%),
-    linear-gradient(180deg,rgba(5,5,16,.08),rgba(5,5,16,.92) 92%,#050510 100%);
+    radial-gradient(circle at 50% 34%,rgba(0,0,0,.08),rgba(0,0,0,.52) 58%,rgba(0,0,0,.92) 100%),
+    linear-gradient(180deg,rgba(5,5,16,.06),rgba(5,5,16,.90) 92%,#050510 100%);
 }
-.hero-content{
+.hero-inner{
   position:relative;
   z-index:2;
   width:100%;
-  max-width:1040px;
-  padding:150px 22px 90px;
-  text-align:center;
+  max-width:1160px;
+  padding:145px 22px 88px;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:54px;
+  align-items:center;
 }
-.hero-logo{
-  width:min(520px,86vw);
-  height:auto;
-  display:block;
-  margin:0 auto 28px;
-  filter:drop-shadow(0 0 22px rgba(255,91,216,.5)) drop-shadow(0 0 30px rgba(255,241,92,.18));
+.brand-logo{
+  width:min(420px,82vw);
+  margin-bottom:28px;
+  filter:drop-shadow(0 0 22px rgba(255,91,216,.48)) drop-shadow(0 0 28px rgba(255,241,92,.18));
 }
 .eyebrow{
   display:inline-flex;
   align-items:center;
   gap:8px;
   padding:8px 14px;
-  margin-bottom:24px;
+  margin-bottom:22px;
   border-radius:999px;
   border:1px solid rgba(255,255,255,.22);
   background:rgba(255,255,255,.08);
@@ -132,7 +132,7 @@ a{color:inherit}
 }
 h1{
   margin:0;
-  font-size:clamp(44px,7vw,86px);
+  font-size:clamp(46px,7vw,86px);
   line-height:.98;
   letter-spacing:-3px;
 }
@@ -143,15 +143,14 @@ h1{
   color:transparent;
 }
 .lead{
-  max-width:760px;
-  margin:24px auto 0;
-  color:rgba(255,255,255,.80);
-  font-size:clamp(19px,2vw,24px);
+  max-width:720px;
+  margin:24px 0 0;
+  color:rgba(255,255,255,.82);
+  font-size:clamp(19px,2vw,23px);
 }
 .actions{
   margin-top:34px;
   display:flex;
-  justify-content:center;
   gap:14px;
   flex-wrap:wrap;
 }
@@ -174,13 +173,34 @@ h1{
   border:1px solid rgba(255,255,255,.18);
   background:rgba(255,255,255,.065);
 }
-.scroll-hint{
-  position:absolute;
-  bottom:28px;
-  left:50%;
-  transform:translateX(-50%);
-  color:rgba(255,255,255,.48);
-  font-size:13px;
+.hero-card{
+  border:1px solid rgba(255,255,255,.16);
+  background:linear-gradient(180deg,rgba(255,255,255,.15),rgba(255,255,255,.07));
+  border-radius:42px;
+  padding:28px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(18px);
+}
+.hero-card img{
+  width:100%;
+  border-radius:32px;
+  display:block;
+  box-shadow:0 28px 70px rgba(0,0,0,.46);
+}
+.store-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+.store-pill{
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(0,0,0,.35);
+  border-radius:14px;
+  padding:10px 14px;
+  font-size:14px;
+  font-weight:760;
+  color:rgba(255,255,255,.86);
 }
 main{
   background:
@@ -215,41 +235,76 @@ p{
   color:var(--muted);
   font-size:18px;
 }
+.readiary-section{
+  background:
+    radial-gradient(circle at 14% 10%,rgba(167,196,138,.16),transparent 28%),
+    linear-gradient(180deg,#f8f4ea,#efe7d8);
+  color:var(--text);
+}
+.readiary-section p{color:#6D756A}
+.readiary-layout{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:44px;
+  align-items:center;
+}
+.readiary-logo{
+  width:100%;
+  border-radius:42px;
+  box-shadow:0 24px 70px rgba(38,49,39,.18);
+}
+.features{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:30px;
+}
+.feature{
+  background:rgba(255,253,248,.75);
+  border:1px solid #E7DDCF;
+  border-radius:26px;
+  padding:24px;
+  box-shadow:0 8px 24px rgba(38,49,39,.07);
+}
+.feature strong{
+  display:block;
+  margin-bottom:8px;
+  color:#263127;
+  font-size:18px;
+}
+.premium-box{
+  margin-top:26px;
+  background:#263127;
+  color:#fff;
+  border-radius:28px;
+  padding:26px;
+  border:1px solid rgba(255,255,255,.12);
+}
+.premium-box p{color:rgba(255,255,255,.74)}
 .apps-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:24px;
 }
 .app-card{
-  position:relative;
-  overflow:hidden;
   border:1px solid var(--border);
   border-radius:38px;
   background:linear-gradient(180deg,rgba(255,255,255,.13),rgba(255,255,255,.055));
+  padding:30px;
   box-shadow:var(--shadow);
 }
-.app-card::before{
-  content:"";
-  position:absolute;
-  inset:-1px;
-  background:radial-gradient(circle at 30% 0%,rgba(255,255,255,.16),transparent 35%);
-  pointer-events:none;
-}
-.app-content{
-  position:relative;
-  z-index:1;
-  padding:30px;
+.app-card-inner{
   display:grid;
-  grid-template-columns:184px 1fr;
-  gap:28px;
+  grid-template-columns:150px 1fr;
+  gap:24px;
   align-items:center;
 }
-.app-icon{
-  width:184px;
-  height:184px;
+.app-card img{
+  width:150px;
+  height:150px;
   object-fit:cover;
-  border-radius:40px;
-  box-shadow:0 24px 60px rgba(0,0,0,.45);
+  border-radius:32px;
+  box-shadow:0 22px 56px rgba(0,0,0,.4);
 }
 .kicker{
   font-size:13px;
@@ -258,8 +313,8 @@ p{
   letter-spacing:.1em;
   margin-bottom:9px;
 }
-.green{color:var(--green)}
-.red{color:var(--red)}
+.green{color:#adff72}
+.red{color:#ff6470}
 .status{
   display:inline-flex;
   margin-top:20px;
@@ -297,8 +352,7 @@ p{
   border:1px solid var(--border);
   border-radius:42px;
   padding:46px;
-  background:
-    linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.045));
+  background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.045));
   box-shadow:var(--shadow);
 }
 .values{
@@ -320,7 +374,7 @@ p{
   content:"";
   position:absolute;
   inset:0;
-  background-image:url("artifistudio-bg.png");
+  background-image:url("artifistudio_bg.png");
   background-size:cover;
   background-position:center;
   opacity:.52;
@@ -337,6 +391,10 @@ p{
   max-width:900px;
   width:100%;
   padding:140px 22px 60px;
+}
+.legal-logo{
+  width:180px;
+  filter:drop-shadow(0 0 14px rgba(255,91,216,.28));
 }
 .legal-page{
   max-width:900px;
@@ -385,19 +443,22 @@ p{
   margin-left:18px;
 }
 @media(max-width:940px){
-  .apps-grid,.coming-grid{grid-template-columns:1fr}
-  .app-content{grid-template-columns:150px 1fr}
-  .app-icon{width:150px;height:150px;border-radius:32px}
+  .hero-inner,.readiary-layout,.apps-grid,.coming-grid{grid-template-columns:1fr}
+  .hero-inner{text-align:center}
+  .lead{margin-left:auto;margin-right:auto}
+  .actions,.store-buttons{justify-content:center}
+  .app-card-inner{grid-template-columns:130px 1fr}
+  .app-card img{width:130px;height:130px;border-radius:28px}
 }
 @media(max-width:720px){
   .nav{align-items:flex-start;flex-direction:column;gap:12px}
-  .nav-links{gap:16px;flex-wrap:wrap}
-  .nav-logo img{width:132px}
-  .hero-logo{width:min(390px,90vw)}
-  .hero-content{padding-top:145px}
-  .app-content{grid-template-columns:1fr}
-  .app-icon{width:156px;height:156px}
-  .values{grid-template-columns:1fr}
+  .nav-links{gap:15px;flex-wrap:wrap}
+  .nav-logo img{width:126px}
+  .brand-logo{width:min(360px,88vw)}
+  .hero-inner{padding-top:145px}
+  .features,.values{grid-template-columns:1fr}
+  .app-card-inner{grid-template-columns:1fr}
+  .app-card img{width:146px;height:146px}
   .about-panel,.legal-page{padding:30px}
 }
 </style>
@@ -408,10 +469,11 @@ p{
 <header class="site-header">
   <div class="nav">
     <a class="nav-logo" href="index.html" aria-label="ArtiFi Studio home">
-      <img src="artifistudio-logo.png" alt="ArtiFi Studio">
+      <img src="artifistudio_logo.png" alt="ArtiFi Studio">
     </a>
     <nav class="nav-links">
       <a href="index.html">Home</a>
+      <a href="index.html#readiary">Readiary</a>
       <a href="index.html#apps">Apps</a>
       <a href="index.html#about">About</a>
       <a href="privacy.html">Privacy</a>
@@ -422,7 +484,7 @@ p{
 
 <section class="legal-hero">
   <div class="legal-hero-inner">
-    <img class="footer-logo" src="artifistudio-logo.png" alt="ArtiFi Studio">
+    <img class="legal-logo" src="artifistudio_logo.png" alt="ArtiFi Studio">
   </div>
 </section>
 <main>
@@ -435,10 +497,10 @@ p{
       <p>For questions, bug reports, feedback, or app support, please email us at <strong>artifistudio@gmail.com</strong>.</p>
 
       <h2>Our Apps</h2>
-      <p>Current and upcoming ArtiFi Studio apps include BookLeaf, Burn After Writing, and more apps in development.</p>
+      <p>Current and upcoming ArtiFi Studio apps include Readiary, Burn After Writing, and more apps in development.</p>
 
-      <h2>BookLeaf</h2>
-      <p>BookLeaf is a reading journal app that helps users save books, write notes, and keep track of their reading journey.</p>
+      <h2>Readiary</h2>
+      <p>Readiary is a reading journal app that helps users save books, write notes, and keep track of their reading journey.</p>
 
       <h2>Burn After Writing</h2>
       <p>Burn After Writing is a private writing app designed for personal thoughts, reflections, and expressive writing.</p>
@@ -452,7 +514,7 @@ p{
 <footer class="footer">
   <div class="footer-inner">
     <div>
-      <img class="footer-logo" src="artifistudio-logo.png" alt="ArtiFi Studio">
+      <img class="footer-logo" src="artifistudio_logo.png" alt="ArtiFi Studio">
       <div>© 2026 ArtiFi Studio. All rights reserved.</div>
     </div>
     <div>
