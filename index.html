@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ArtiFi Studio</title>
+<meta name="description" content="ArtiFi Studio is a creative studio where technology meets art.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand"><span>ArtiFi Studio</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+    <div class="lang-switch">
+      <button id="l-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="l-ko" onclick="setLang('ko')">한</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-orb"></div>
+  <div class="hero-inner">
+    <img src="assets/studio-logo.png" class="hero-logo" alt="ArtiFi Studio">
+    <div class="eyebrow">
+      <span data-en>A creative studio for art, apps, and everyday ideas</span>
+      <span data-ko>일상에서 시작되는 작은 영감</span>
+    </div>
+    <h1>
+      <span data-en>Imagine.<br>Create. <span class="gradient">Play.</span></span>
+      <span data-ko>상상하고,<br>만들고, <span class="gradient">즐기다.</span></span>
+    </h1>
+    <p class="lead">
+      <span data-en>ArtiFi Studio creates artful digital experiences where technology meets imagination.</span>
+      <span data-ko>ArtiFi Studio는 기술과 예술을 바탕으로, 일상을 조금 더 즐겁고 특별하게 만드는 크리에이티브 스튜디오입니다.</span>
+    </p>
+    <div class="cta">
+      <a href="#projects" class="btn primary"><span data-en>Explore Projects</span><span data-ko>프로젝트 둘러보기</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section center">
+    <div class="section-label"><span data-en>Studio</span><span data-ko>스튜디오</span></div>
+    <h2 class="section-title">
+      <span data-en>Art meets everyday life.</span>
+      <span data-ko>기술과 예술이 만나<br>새로운 경험이 됩니다.</span>
+    </h2>
+    <p class="section-copy">
+      <span data-en>We make creative projects that feel personal, useful, and a little unexpected — from quiet reading journals to expressive writing spaces.</span>
+      <span data-ko>우리는 하나의 분야에 머물지 않습니다. 좋은 아이디어라면 앱, 디자인, 실험적인 프로젝트까지 어떤 형태로든 만들어냅니다.</span>
+    </p>
+
+    <div class="motto-grid">
+      <div class="motto"><div class="icon">◐</div><h3><span data-en>Everyday</span><span data-ko>일상</span></h3><p><span data-en>Small experiences made for real daily moments.</span><span data-ko>매일 자연스럽게 함께할 수 있는 경험을 만듭니다.</span></p></div>
+      <div class="motto"><div class="icon">✧</div><h3><span data-en>Imagine</span><span data-ko>상상</span></h3><p><span data-en>Every project begins with curiosity.</span><span data-ko>모든 창작은 작은 호기심에서 시작됩니다.</span></p></div>
+      <div class="motto"><div class="icon">◇</div><h3><span data-en>Create</span><span data-ko>창작</span></h3><p><span data-en>Technology and art become something you can use.</span><span data-ko>기술과 예술을 연결해 새로운 경험을 만듭니다.</span></p></div>
+      <div class="motto"><div class="icon">❋</div><h3><span data-en>Play</span><span data-ko>즐거움</span></h3><p><span data-en>We add a little more joy to ordinary things.</span><span data-ko>일상에 작은 즐거움을 더합니다.</span></p></div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="section-label"><span data-en>Projects</span><span data-ko>프로젝트</span></div>
+    <h2 class="section-title">
+      <span data-en>Upcoming apps from ArtiFi Studio.</span>
+      <span data-ko>일상을 조금 더 풍요롭게 만드는 작은 앱들.</span>
+    </h2>
+    <p class="section-copy">
+      <span data-en>Two mobile apps are currently preparing for release.</span>
+      <span data-ko>ArtiFi Studio가 준비 중인 첫 번째 프로젝트입니다.</span>
+    </p>
+
+    <div class="projects">
+      <article class="project">
+        <div class="project-img"><img src="assets/readiary.jpg" alt="Readiary"></div>
+        <div class="project-body">
+          <div class="project-type green">Reading Journal</div>
+          <h3>Readiary</h3>
+          <div class="tag"><span data-en>Your Reading Journal</span><span data-ko>나만의 독서를 기록하는 공간</span></div>
+          <p><span data-en>Save books, write notes, collect memorable lines, and build your personal reading history.</span><span data-ko>읽은 책을 기록하고, 마음에 남은 문장을 저장하며, 나만의 서재를 조금씩 채워보세요.</span></p>
+          <div class="chips">
+            <span class="chip"><span data-en>Reading notes</span><span data-ko>독서 기록</span></span>
+            <span class="chip"><span data-en>Personal library</span><span data-ko>나만의 서재</span></span>
+            <span class="chip"><span data-en>Coming soon</span><span data-ko>출시 예정</span></span>
+          </div>
+          <div class="project-links">
+            <span class="store">App Store — Coming Soon</span>
+            <span class="store">Google Play — Coming Soon</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-img"><img src="assets/burn.png" alt="Burn After Writing"></div>
+        <div class="project-body">
+          <div class="project-type red">Private Writing</div>
+          <h3>Burn After Writing</h3>
+          <div class="tag"><span data-en>Write. Release. Move on.</span><span data-ko>하지 못했던 말들을 마음껏 적어보세요.</span></div>
+          <p><span data-en>Write down what you could not say, then burn it away and let it go.</span><span data-ko>마음속에 남아 있던 말들을 모두 적어보세요. 그리고 미련 없이 태워버리세요.</span></p>
+          <div class="chips">
+            <span class="chip"><span data-en>Private writing</span><span data-ko>쓰기</span></span>
+            <span class="chip"><span data-en>Let it go</span><span data-ko>마음 비우기</span></span>
+            <span class="chip"><span data-en>Coming soon</span><span data-ko>출시 예정</span></span>
+          </div>
+          <div class="project-links">
+            <span class="store">App Store — Coming Soon</span>
+            <span class="store">Google Play — Coming Soon</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="statement">
+      <div class="big">
+        <span data-en>We do not just build apps.<br>We create experiences.</span>
+        <span data-ko>우리는 단순히 앱을 만들지 않습니다.<br>하나의 경험을 만듭니다.</span>
+      </div>
+      <p>
+        <span data-en>Apps are only one part of what ArtiFi Studio creates. Each project has its own mood, story, and reason to exist.</span>
+        <span data-ko>앱은 ArtiFi Studio가 만드는 것들 중 하나입니다. 각 프로젝트는 저마다의 분위기와 이야기, 그리고 존재 이유를 가지고 있습니다.</span>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <div class="f-brand">ArtiFi Studio</div>
+    <div><span data-en>A creative studio where technology meets art.</span><span data-ko>기술과 예술이 만나는 크리에이티브 스튜디오.</span></div>
+  </div>
+  <div class="f-links">
+    <a href="index.html">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+    <a href="mailto:artifistudio@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
