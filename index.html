@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ArtiFi Studio — imagine, create, play</title>
-<meta content="ArtiFi Studio — a creative studio where technology meets art, with no limits. Imagine. Create. Play." name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=Space+Grotesk:wght@400;500;600&amp;family=Cormorant+Garamond:ital,wght@0,500;1,500&amp;family=Noto+Sans+KR:wght@400;500;700&amp;family=Noto+Serif+KR:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<meta name="description" content="ArtiFi Studio — a creative studio where technology meets art, with no limits. Imagine. Create. Play.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Space+Grotesk:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#0a0612;--ink-2:#120a1f;
@@ -30,6 +29,7 @@
   html[lang="en"] [data-en]{display:revert}
   html[lang="ko"] [data-ko]{display:revert}
   html[lang="ja"] [data-ja]{display:revert}
+  html[lang="ja"] [data-en]:not(:has(+ [data-ja])){display:revert}
   /* korean typography swaps */
   html[lang="ko"] body{font-family:var(--font-ko)}
   html[lang="ko"] .hero h1,
@@ -127,130 +127,138 @@
 </style>
 </head>
 <body>
+
 <nav id="nav">
-<a class="brand" href="#top"><img alt="ArtiFi Studio" src="assets/nav-logo.png"/></a>
-<div class="links">
-<a class="about" href="#top"><span data-en="">Home</span><span data-ko="">홈</span><span data-ja="">ホーム</span></a>
-<a href="#apps"><span data-en="">Apps</span><span data-ko="">앱</span><span data-ja="">アプリ</span></a>
-<a class="pill" href="privacy/readiary/"><span data-en="">Privacy</span><span data-ko="">개인정보</span><span data-ja="">プライバシー</span></a>
-<div class="lang-switch">
-<button class="active" id="l-en" onclick="setLang('en')">EN</button>
-<button id="l-ko" onclick="setLang('ko')">한</button>
-<button id="l-ja" onclick="setLang('ja')">日</button>
-</div>
-</div>
+  <a href="#top" class="brand"><img src="assets/nav-logo.png" alt="ArtiFi Studio"></a>
+  <div class="links">
+    <a href="#top" class="about"><span data-en>Home</span><span data-ko>홈</span><span data-ja>ホーム</span></a>
+    <a href="#apps"><span data-en>Apps</span><span data-ko>앱</span><span data-ja>アプリ</span></a>
+    <a href="privacy/readiary/" class="pill"><span data-en>Privacy</span><span data-ko>개인정보</span><span data-ja>プライバシー</span></a>
+    <div class="lang-switch">
+      <button id="l-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="l-ko" onclick="setLang('ko')">한</button>
+      <button id="l-ja" onclick="setLang('ja')">日</button>
+    </div>
+  </div>
 </nav>
+
 <header class="hero" id="top">
-<div class="bg"></div>
-<div class="inner">
-<img alt="ArtiFi Studio" class="hero-logo" src="assets/studio-logo.png"/>
-<p class="eyebrow"><span data-en="">Everyday. Imagine. Create. Play.</span><span data-ko="">일상. 상상. 창작. 즐거움.</span><span data-ja="">日常。想像。創造。楽しさ。</span></p>
-<h1>
-<span data-en="">Welcome to<br/><em>ArtiFi Studio.</em></span>
-<span data-ko="">ArtiFi Studio에<br/><em>오신 것을 환영합니다.</em></span><span data-ja="">ArtiFi Studioへ<br/><em>ようこそ。</em></span>
-</h1>
-<p class="lead">
-<span data-en="">Where technology meets art, and neither one sets the limit. We follow ideas across every medium — turning imagination into something you can feel.</span>
-<span data-ko="">기술과 예술이 만나고, 그 어느 것도 한계가 되지 않는 곳. 우리는 모든 경계를 넘어 아이디어를 좇으며 — 상상을 느낄 수 있는 무언가로 바꿉니다.</span><span data-ja="">テクノロジーとアートが出会い、どちらも限界にならない場所。私たちはあらゆる表現を横断し、想像を感じられる形へと変えていきます。</span>
-</p>
-<div class="cta-row">
-<a class="btn btn-primary" href="#make"><span data-en="">What we make →</span><span data-ko="">우리가 만드는 것 →</span><span data-ja="">私たちがつくるもの →</span></a>
-<a class="btn btn-ghost" href="#apps"><span data-en="">See our apps</span><span data-ko="">앱 둘러보기</span><span data-ja="">アプリを見る</span></a>
-</div>
-</div>
-<div class="scroll-hint"><span data-en="">SCROLL</span><span data-ko="">스크롤</span><span data-ja="">スクロール</span><span class="line"></span></div>
+  <div class="bg"></div>
+  <div class="inner">
+    <img src="assets/studio-logo.png" alt="ArtiFi Studio" class="hero-logo">
+    <p class="eyebrow"><span data-en>Everyday. Imagine. Create. Play.</span><span data-ko>일상. 상상. 창작. 즐거움.</span></p>
+    <h1>
+      <span data-en>Welcome to<br><em>ArtiFi Studio.</em></span>
+      <span data-ko>ArtiFi Studio에<br><em>오신 것을 환영합니다.</em></span>
+    </h1>
+    <p class="lead">
+      <span data-en>Where technology meets art, and neither one sets the limit. We follow ideas across every medium — turning imagination into something you can feel.</span>
+      <span data-ko>기술과 예술이 만나고, 그 어느 것도 한계가 되지 않는 곳. 우리는 모든 경계를 넘어 아이디어를 좇으며 — 상상을 느낄 수 있는 무언가로 바꿉니다.</span>
+    </p>
+    <div class="cta-row">
+      <a href="#make" class="btn btn-primary"><span data-en>What we make →</span><span data-ko>우리가 만드는 것 →</span></a>
+      <a href="#apps" class="btn btn-ghost"><span data-en>See our apps</span><span data-ko>앱 둘러보기</span></a>
+    </div>
+  </div>
+  <div class="scroll-hint"><span data-en>SCROLL</span><span data-ko>스크롤</span><span class="line"></span></div>
 </header>
+
 <section id="make">
-<div class="sec-label"><span data-en="">Our approach</span><span data-ko="">우리의 방식</span><span data-ja="">私たちの考え方</span></div>
-<h2 class="sec-title">
-<span data-en="">No medium. <em>No limits.</em></span>
-<span data-ko="">정해진 형태도, <em>한계도 없이.</em></span><span data-ja="">決まった形も、<em>限界もなく。</em></span>
-</h2>
-<p class="sec-intro"><span data-en="">We don't box ourselves into a single craft. Whatever the idea asks for, that's what we make.</span><span data-ko="">우리는 하나의 형태에 스스로를 가두지 않습니다. 아이디어가 원하는 것, 그것이 우리가 만드는 것입니다.</span><span data-ja="">ひとつの表現に自分たちを閉じ込めません。アイデアが求めるものを、そのまま形にします。</span></p>
-<div class="make-grid">
-<div class="make-item">
-<div class="make-ico">◐</div>
-<h4><span data-en="">Everyday</span><span data-ko="">일상</span><span data-ja="">日常</span></h4>
-<p><span data-en="">We make things that slip quietly into daily life — there when you need them, never in the way.</span><span data-ko="">우리는 일상 속에 조용히 스며드는 것을 만듭니다 — 필요할 때 곁에 있되, 결코 거슬리지 않게.</span><span data-ja="">私たちは日常に静かに溶け込むものをつくります。必要なときにそばにありながら、決して邪魔にならないように。</span></p>
-</div>
-<div class="make-item">
-<div class="make-ico">✧</div>
-<h4><span data-en="">Imagine</span><span data-ko="">상상</span><span data-ja="">想像</span></h4>
-<p><span data-en="">A question, a feeling, a what-if worth chasing — curiosity leads the way.</span><span data-ko="">하나의 질문, 하나의 감정, 좇을 가치가 있는 상상 — 호기심이 길을 엽니다.</span><span data-ja="">ひとつの問い、ひとつの感情、追いかける価値のある「もしも」。好奇心が道をひらきます。</span></p>
-</div>
-<div class="make-item">
-<div class="make-ico">◇</div>
-<h4><span data-en="">Create</span><span data-ko="">창작</span><span data-ja="">創造</span></h4>
-<p><span data-en="">Where technology meets art. We build without borders between the two.</span><span data-ko="">기술과 예술이 만나는 곳. 우리는 그 둘 사이의 경계 없이 만듭니다.</span><span data-ja="">テクノロジーとアートが出会う場所。私たちはその間に境界を設けずにつくります。</span></p>
-</div>
-<div class="make-item">
-<div class="make-ico">❋</div>
-<h4><span data-en="">Play</span><span data-ko="">즐거움</span><span data-ja="">楽しさ</span></h4>
-<p><span data-en="">Made so the people who use it feel a little more joy in their day.</span><span data-ko="">사용하는 사람이 하루 속에서 조금 더 즐거움을 느끼도록 만듭니다.</span><span data-ja="">使う人が一日の中で、少しでも多くの喜びを感じられるようにつくります。</span></p>
-</div>
-</div>
+  <div class="sec-label"><span data-en>Our approach</span><span data-ko>우리의 방식</span></div>
+  <h2 class="sec-title">
+    <span data-en>No medium. <em>No limits.</em></span>
+    <span data-ko>정해진 형태도, <em>한계도 없이.</em></span>
+  </h2>
+  <p class="sec-intro"><span data-en>We don't box ourselves into a single craft. Whatever the idea asks for, that's what we make.</span><span data-ko>우리는 하나의 형태에 스스로를 가두지 않습니다. 아이디어가 원하는 것, 그것이 우리가 만드는 것입니다.</span></p>
+  <div class="make-grid">
+    <div class="make-item">
+      <div class="make-ico">◐</div>
+      <h4><span data-en>Everyday</span><span data-ko>일상</span></h4>
+      <p><span data-en>We make things that slip quietly into daily life — there when you need them, never in the way.</span><span data-ko>우리는 일상 속에 조용히 스며드는 것을 만듭니다 — 필요할 때 곁에 있되, 결코 거슬리지 않게.</span></p>
+    </div>
+    <div class="make-item">
+      <div class="make-ico">✧</div>
+      <h4><span data-en>Imagine</span><span data-ko>상상</span></h4>
+      <p><span data-en>A question, a feeling, a what-if worth chasing — curiosity leads the way.</span><span data-ko>하나의 질문, 하나의 감정, 좇을 가치가 있는 상상 — 호기심이 길을 엽니다.</span></p>
+    </div>
+    <div class="make-item">
+      <div class="make-ico">◇</div>
+      <h4><span data-en>Create</span><span data-ko>창작</span></h4>
+      <p><span data-en>Where technology meets art. We build without borders between the two.</span><span data-ko>기술과 예술이 만나는 곳. 우리는 그 둘 사이의 경계 없이 만듭니다.</span></p>
+    </div>
+    <div class="make-item">
+      <div class="make-ico">❋</div>
+      <h4><span data-en>Play</span><span data-ko>즐거움</span></h4>
+      <p><span data-en>Made so the people who use it feel a little more joy in their day.</span><span data-ko>사용하는 사람이 하루 속에서 조금 더 즐거움을 느끼도록 만듭니다.</span></p>
+    </div>
+  </div>
 </section>
+
 <section id="apps">
-<div class="sec-label">📱 <span data-en="">Apps</span><span data-ko="">앱</span><span data-ja="">アプリ</span></div>
-<h2 class="sec-title">
-<span data-en="">Thoughtful apps<br/>for <em>everyday life.</em></span>
-<span data-ko="">일상을 위한<br/><em>사려 깊은 앱.</em></span><span data-ja="">日常のための<br/><em>心のこもったアプリ。</em></span>
-</h2>
-<p class="sec-intro"><span data-en="">Small, thoughtful apps for everyday life. Both run entirely on your phone; nothing you write ever leaves it.</span><span data-ko="">일상을 위한 작고 사려 깊은 앱. 두 앱 모두 온전히 당신의 휴대폰에서만 작동하며, 당신이 쓴 것은 절대 밖으로 나가지 않습니다.</span><span data-ja="">日常のための小さく丁寧なアプリ。どちらも端末内だけで動作し、あなたが書いた内容が外へ送信されることはありません。</span></p>
-<div class="apps">
-<article class="app-card" id="readiary">
-<div class="glow"></div>
-<img alt="Readiary" class="app-icon shadowed" src="assets/readiary.jpg"/>
-<div class="app-body">
-<h3>Readiary<span style="font-family:var(--font-body);font-weight:400;font-size:15px;color:var(--muted);letter-spacing:0"> : Reading Journal</span></h3>
-<span class="tag"><span data-en="">a reading journal that grows with you</span><span data-ko="">당신과 함께 자라나는 독서 일기</span><span data-ja="">あなたとともに育つ読書日記</span></span>
-<p><span data-en="">Keep a shelf of everything you've read, capture the lines that stayed with you, and watch your own little library fill up — page by page, season by season.</span><span data-ko="">읽은 모든 책을 서재에 꽂아두고, 마음에 남은 문장을 담고, 당신만의 작은 도서관이 채워지는 걸 지켜보세요 — 한 페이지씩, 한 계절씩.</span><span data-ja="">読んだ本を自分の本棚に並べ、心に残った言葉を記録し、自分だけの小さな図書館が少しずつ満ちていくのを楽しめます。</span></p>
-<div class="app-meta">
-<span class="chip">📖 <span data-en="">Reading notes</span><span data-ko="">독서노트</span><span data-ja="">読書メモ</span></span>
-<span class="chip">🌿 <span data-en="">Your own library</span><span data-ko="">나만의 서재</span><span data-ja="">自分だけの本棚</span></span>
-<span class="chip">🤝 <span data-en="">Share with friends</span><span data-ko="">친구와 함께</span><span data-ja="">友だちと共有</span></span>
-</div>
-<div class="app-links">
-<a class="store-btn" href="#"> App Store</a>
-<a class="store-btn" href="#">▶ Google Play</a>
-<a class="store-btn" href="privacy/readiary/"><span data-en="">Privacy</span><span data-ko="">개인정보</span><span data-ja="">プライバシー</span></a>
+  <div class="sec-label">📱 <span data-en>Apps</span><span data-ko>앱</span><span data-ja>アプリ</span></div>
+  <h2 class="sec-title">
+    <span data-en>Thoughtful apps<br>for <em>everyday life.</em></span>
+    <span data-ko>일상을 위한<br><em>사려 깊은 앱.</em></span>
+  </h2>
+  <p class="sec-intro"><span data-en>Small, thoughtful apps for everyday life. Both run entirely on your phone; nothing you write ever leaves it.</span><span data-ko>일상을 위한 작고 사려 깊은 앱. 두 앱 모두 온전히 당신의 휴대폰에서만 작동하며, 당신이 쓴 것은 절대 밖으로 나가지 않습니다.</span></p>
 
-</div>
-</div>
-</article>
-<article class="app-card" id="burn">
-<div class="glow"></div>
-<img alt="Burn After Writing" class="app-icon" src="assets/burn.png"/>
-<div class="app-body">
-<h3>Burn After Writing</h3>
-<span class="tag"><span data-en="">let out what you couldn't say</span><span data-ko="">차마 하지 못한 말을 여기에</span><span data-ja="">言えなかったことを、ここに</span></span>
-<p><span data-en="">The words you regret saying. The feelings you never got to express. Pour them out here — then burn it all away, and let it go.</span><span data-ko="">말하고 나서 후회한 말들. 끝내 표현하지 못한 답답한 마음. 이곳에 마음껏 쏟아내고 — 모두 태워 없애버리세요.</span><span data-ja="">言って後悔した言葉も、最後まで伝えられなかった気持ちも。ここにすべて書き出し、燃やして手放しましょう。</span></p>
-<div class="app-meta">
-<span class="chip">🔥 <span data-en="">Write &amp; burn</span><span data-ko="">쓰고 태우기</span><span data-ja="">書いて燃やす</span></span>
-<span class="chip">💬 <span data-en="">Say the unsaid</span><span data-ko="">못다 한 말</span><span data-ja="">言えなかった言葉</span></span>
-<span class="chip">🌙 <span data-en="">Just let it go</span><span data-ko="">훌훌 털어버리기</span><span data-ja="">手放す</span></span>
-</div>
-<div class="app-links">
-<a class="store-btn" href="#"> App Store</a>
-<a class="store-btn" href="#">▶ Google Play</a>
-<a class="store-btn" href="privacy/burn-after-writing/"><span data-en="">Privacy</span><span data-ko="">개인정보</span><span data-ja="">プライバシー</span></a></div>
-</div>
-</article>
-</div>
+  <div class="apps">
+    <article class="app-card" id="readiary">
+      <div class="glow"></div>
+      <img src="assets/readiary.jpg" alt="Readiary" class="app-icon shadowed">
+      <div class="app-body">
+        <h3>Readiary<span style="font-family:var(--font-body);font-weight:400;font-size:15px;color:var(--muted);letter-spacing:0"> : Reading Journal</span></h3>
+        <span class="tag"><span data-en>a reading journal that grows with you</span><span data-ko>당신과 함께 자라나는 독서 일기</span></span>
+        <p><span data-en>Keep a shelf of everything you've read, capture the lines that stayed with you, and watch your own little library fill up — page by page, season by season.</span><span data-ko>읽은 모든 책을 서재에 꽂아두고, 마음에 남은 문장을 담고, 당신만의 작은 도서관이 채워지는 걸 지켜보세요 — 한 페이지씩, 한 계절씩.</span></p>
+        <div class="app-meta">
+          <span class="chip">📖 <span data-en>Reading notes</span><span data-ko>독서노트</span></span>
+          <span class="chip">🌿 <span data-en>Your own library</span><span data-ko>나만의 서재</span></span>
+          <span class="chip">🤝 <span data-en>Share with friends</span><span data-ko>친구와 함께</span></span>
+        </div>
+        <div class="app-links">
+          <a href="#" class="store-btn"> App Store</a>
+          <a href="#" class="store-btn">▶ Google Play</a>
+          <a href="privacy/burn-after-writing/" class="store-btn">Privacy</a>
+          <a href="privacy/readiary/" class="store-btn">Privacy</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="app-card" id="burn">
+      <div class="glow"></div>
+      <img src="assets/burn.png" alt="Burn After Writing" class="app-icon">
+      <div class="app-body">
+        <h3>Burn After Writing</h3>
+        <span class="tag"><span data-en>let out what you couldn't say</span><span data-ko>차마 하지 못한 말을 여기에</span></span>
+        <p><span data-en>The words you regret saying. The feelings you never got to express. Pour them out here — then burn it all away, and let it go.</span><span data-ko>말하고 나서 후회한 말들. 끝내 표현하지 못한 답답한 마음. 이곳에 마음껏 쏟아내고 — 모두 태워 없애버리세요.</span></p>
+        <div class="app-meta">
+          <span class="chip">🔥 <span data-en>Write &amp; burn</span><span data-ko>쓰고 태우기</span></span>
+          <span class="chip">💬 <span data-en>Say the unsaid</span><span data-ko>못다 한 말</span></span>
+          <span class="chip">🌙 <span data-en>Just let it go</span><span data-ko>훌훌 털어버리기</span></span>
+        </div>
+        <div class="app-links">
+          <a href="#" class="store-btn"> App Store</a>
+          <a href="#" class="store-btn">▶ Google Play</a>
+        </div>
+      </div>
+    </article>
+  </div>
 </section>
-<footer>
-<div>
-<div class="f-brand">ArtiFi Studio</div>
-<p class="f-tag"><span data-en="">A creative studio where technology meets art — with no limits.</span><span data-ko="">기술과 예술이 만나는 창작 스튜디오 — 한계 없이.</span><span data-ja="">テクノロジーとアートが出会うクリエイティブスタジオ。限界はありません。</span></p>
-</div>
-<div class="f-links">
-<a href="#apps"><span data-en="">Apps</span><span data-ko="">앱</span><span data-ja="">アプリ</span></a>
-<a href="#make"><span data-en="">What we make</span><span data-ko="">우리가 만드는 것</span><span data-ja="">私たちがつくるもの</span></a>
 
-<a href="privacy/readiary/"><span data-en="">Readiary Privacy Policy</span><span data-ko="">Readiary 개인정보처리방침</span><span data-ja="">Readiary プライバシーポリシー</span></a><a href="privacy/burn-after-writing/"><span data-en="">Burn After Writing Privacy Policy</span><span data-ko="">Burn After Writing 개인정보처리방침</span><span data-ja="">Burn After Writing プライバシーポリシー</span></a><a href="mailto:artifistudio@gmail.com">artifistudio@gmail.com</a>
-</div>
-<div class="copy">© 2026 ArtiFi Studio. All rights reserved.</div>
+<footer>
+  <div>
+    <div class="f-brand">ArtiFi Studio</div>
+    <p class="f-tag"><span data-en>A creative studio where technology meets art — with no limits.</span><span data-ko>기술과 예술이 만나는 창작 스튜디오 — 한계 없이.</span></p>
+  </div>
+  <div class="f-links">
+    <a href="#apps"><span data-en>Apps</span><span data-ko>앱</span><span data-ja>アプリ</span></a>
+    <a href="#make"><span data-en>What we make</span><span data-ko>우리가 만드는 것</span></a>
+    <a href="privacy/readiary/">Privacy Policy · 개인정보처리방침</a>
+    <a href="mailto:artifistudio@gmail.com">artifistudio@gmail.com</a>
+  </div>
+  <div class="copy">© 2026 ArtiFi Studio. All rights reserved.</div>
 </footer>
+
 <script>
   const nav=document.getElementById('nav');
   addEventListener('scroll',()=>{
