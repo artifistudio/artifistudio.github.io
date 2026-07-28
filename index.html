@@ -25,9 +25,11 @@
   a{color:inherit;text-decoration:none}
 
   /* language visibility */
-  [data-en],[data-ko]{display:none}
+  [data-en],[data-ko],[data-ja]{display:none}
   html[lang="en"] [data-en]{display:revert}
   html[lang="ko"] [data-ko]{display:revert}
+  html[lang="ja"] [data-ja]{display:revert}
+  html[lang="ja"] [data-en]:not(:has(+ [data-ja])){display:revert}
   /* korean typography swaps */
   html[lang="ko"] body{font-family:var(--font-ko)}
   html[lang="ko"] .hero h1,
@@ -129,12 +131,13 @@
 <nav id="nav">
   <a href="#top" class="brand"><img src="assets/nav-logo.png" alt="ArtiFi Studio"></a>
   <div class="links">
-    <a href="#top" class="about"><span data-en>Home</span><span data-ko>홈</span></a>
-    <a href="#apps"><span data-en>Apps</span><span data-ko>앱</span></a>
-    <a href="privacy.html" class="pill"><span data-en>Privacy</span><span data-ko>개인정보</span></a>
+    <a href="#top" class="about"><span data-en>Home</span><span data-ko>홈</span><span data-ja>ホーム</span></a>
+    <a href="#apps"><span data-en>Apps</span><span data-ko>앱</span><span data-ja>アプリ</span></a>
+    <a href="privacy.html" class="pill"><span data-en>Privacy</span><span data-ko>개인정보</span><span data-ja>プライバシー</span></a>
     <div class="lang-switch">
       <button id="l-en" class="active" onclick="setLang('en')">EN</button>
       <button id="l-ko" onclick="setLang('ko')">한</button>
+      <button id="l-ja" onclick="setLang('ja')">日</button>
     </div>
   </div>
 </nav>
@@ -192,7 +195,7 @@
 </section>
 
 <section id="apps">
-  <div class="sec-label">📱 <span data-en>Apps</span><span data-ko>앱</span></div>
+  <div class="sec-label">📱 <span data-en>Apps</span><span data-ko>앱</span><span data-ja>アプリ</span></div>
   <h2 class="sec-title">
     <span data-en>Thoughtful apps<br>for <em>everyday life.</em></span>
     <span data-ko>일상을 위한<br><em>사려 깊은 앱.</em></span>
@@ -215,6 +218,8 @@
         <div class="app-links">
           <a href="#" class="store-btn"> App Store</a>
           <a href="#" class="store-btn">▶ Google Play</a>
+          <a href="privacy.html?app=burn" class="store-btn">Privacy</a>
+          <a href="privacy.html?app=readiary" class="store-btn">Privacy</a>
         </div>
       </div>
     </article>
@@ -246,7 +251,7 @@
     <p class="f-tag"><span data-en>A creative studio where technology meets art — with no limits.</span><span data-ko>기술과 예술이 만나는 창작 스튜디오 — 한계 없이.</span></p>
   </div>
   <div class="f-links">
-    <a href="#apps"><span data-en>Apps</span><span data-ko>앱</span></a>
+    <a href="#apps"><span data-en>Apps</span><span data-ko>앱</span><span data-ja>アプリ</span></a>
     <a href="#make"><span data-en>What we make</span><span data-ko>우리가 만드는 것</span></a>
     <a href="privacy.html">Privacy Policy · 개인정보처리방침</a>
     <a href="mailto:artifistudio@gmail.com">artifistudio@gmail.com</a>
@@ -263,6 +268,7 @@
     document.documentElement.lang=l;
     document.getElementById('l-en').classList.toggle('active',l==='en');
     document.getElementById('l-ko').classList.toggle('active',l==='ko');
+    document.getElementById('l-ja').classList.toggle('active',l==='ja');
   }
   // always start in English on each visit
   setLang('en');
